@@ -1,17 +1,21 @@
-// Pin 13 has an LED connected on most Arduino boards.
-// give it a name:
-int led = 9;
+// Store LED pin values in an array
+int ledPins[] = {9, 10, 11, 12};
+int ledCount = sizeof(ledPins)/sizeof(int);
 
-// the setup routine runs once when you press reset:
+// Setup
 void setup() {
-  // initialize the digital pin as an output.
-  pinMode(led, OUTPUT);
+	// Initialise all relevant LED pins as outputs
+	for (int currentPin = 0; currentPin < ledCount; currentPin++) {
+		pinMode(ledPins[currentPin], OUTPUT);
+	}
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
-  digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);               // wait for a second
-  digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);               // wait for a second
+	for (int currentPin = 0; currentPin < ledCount; currentPin++) {
+    	digitalWrite(ledPins[currentPin], HIGH);
+		delay(1000);
+		digitalWrite(ledPins[currentPin], LOW);
+		delay(1000);
+	}
 }

@@ -1,8 +1,8 @@
 // Store LED pin values in an array
 int ledPins[] = {9, 10, 11, 12};
 // Hold the pin numbers of LEDs that are increasing in brightness
-int brightPins[] = {};
-int dimPins[] ={};
+int brightPins[] = {0, 0, 0, 0};
+int dimPins[] ={0, 0, 0, 0};
 // Count how many LEDs we have in total
 int ledCount = sizeof(ledPins)/sizeof(int);
 
@@ -17,6 +17,5 @@ void setup() {
 	Serial.println("Program Start");
 }
 
-// the loop routine runs over and over again forever:
 void loop() {
 }

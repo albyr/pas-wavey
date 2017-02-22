@@ -1,5 +1,9 @@
 // Store LED pin values in an array
 int ledPins[] = {9, 10, 11, 12};
+// Hold the pin numbers of LEDs that are increasing in brightness
+int brightPins[] = {};
+int dimPins[] ={};
+// Count how many LEDs we have in total
 int ledCount = sizeof(ledPins)/sizeof(int);
 
 // Setup

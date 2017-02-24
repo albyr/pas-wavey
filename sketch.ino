@@ -1,7 +1,7 @@
 // Store LED pin values in an array
-int ledPins[] = {1, 2, 3, 4};
+int ledPins[] = {1, 2, 3, 4}; // Must be sequential at the moment
 // Hold the pin numbers of LEDs that are increasing in brightness
-int brightPins[] = {1, 0, 0, 0};
+int brightPins[] = {ledPins[0], 0, 0, 0};
 int dimPins[] ={0, 0, 0, 0};
 // Hold the current brightness values of the relevant pins
 int brightVal[] = {0, 0, 0, 0};

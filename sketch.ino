@@ -5,7 +5,7 @@ int brightPins[] = {ledPins[0], 0, 0, 0};
 int dimPins[] ={0, 0, 0, 0};
 // Hold the current brightness values of the relevant pins
 int brightVal[] = {0, 0, 0, 0};
-int dimVal[] ={0, 0, 0, 0};
+int dimVal[] ={9, 9, 9, 9};
 // Count how many LEDs we have in total
 int ledCount = sizeof(ledPins)/sizeof(int);
 
@@ -42,6 +42,25 @@ void loop() {
 				brightPins[(currentPin+1)%4] = ledPins[(currentPin+1)%4];
 			}
       	}
+		// If the current pin is in the dimPins array ...
+      	if (dimPins[currentPin] != 0) {
+			// ---
+			// HARDWARE COMMAND = dimVal[currentPin]
+			// ---
+			// Increase the stored brightness value for this pin.
+			dimVal[currentPin] = dimVal[currentPin]-1;
+			// If this pin has reached full brightness ...
+			if (dimVal[currentPin] <= 0) {
+				// ... then reset value to maximum ...
+				dimVal[currentPin] = 9;
+				// ... and move that pin to the brightPins array ...
+				brightPins[currentPin] = dimPins[currentPin];
+				// ... and delete it from the dimPins array ...
+				dimPins[currentPin] = 0;
+				// ... and add the next pin to brightPins array
+				// brightPins[(currentPin+1)%4] = ledPins[(currentPin+1)%4];
+			}
+      	}
     }
 	// Debugging output
   	Serial.println("---");
@@ -49,5 +68,5 @@ void loop() {
 	Serial.print("Dim Pins: ");Serial.print(dimPins[0]);Serial.print(dimPins[1]);Serial.print(dimPins[2]);Serial.println(dimPins[3]);
 	Serial.print("Bright Values: ");Serial.print(brightVal[0]);Serial.print(brightVal[1]);Serial.print(brightVal[2]);Serial.println(brightVal[3]);
 	Serial.print("Dim Values: ");Serial.print(dimVal[0]);Serial.print(dimVal[1]);Serial.print(dimVal[2]);Serial.println(dimVal[3]);
-	delay(1000);
+	delay(1500);
 }

@@ -61,10 +61,10 @@ void loop() {
       	}
     }
 	// Debugging output
-  	Serial.println("---");
-	Serial.print("Bright Pins: ");Serial.print(brightPins[0]);Serial.print(brightPins[1]);Serial.print(brightPins[2]);Serial.println(brightPins[3]);
-	Serial.print("Dim Pins: ");Serial.print(dimPins[0]);Serial.print(dimPins[1]);Serial.print(dimPins[2]);Serial.println(dimPins[3]);
-	Serial.print("Bright Values: ");Serial.print(brightVal[0]);Serial.print(brightVal[1]);Serial.print(brightVal[2]);Serial.println(brightVal[3]);
-	Serial.print("Dim Values: ");Serial.print(dimVal[0]);Serial.print(dimVal[1]);Serial.print(dimVal[2]);Serial.println(dimVal[3]);
-	delay(1500);
+  	// Serial.println("---");
+	// Serial.print("Bright Pins: ");Serial.print(brightPins[0]);Serial.print(brightPins[1]);Serial.print(brightPins[2]);Serial.println(brightPins[3]);
+	// Serial.print("Dim Pins: ");Serial.print(dimPins[0]);Serial.print(dimPins[1]);Serial.print(dimPins[2]);Serial.println(dimPins[3]);
+	// Serial.print("Bright Values: ");Serial.print(brightVal[0]);Serial.print(brightVal[1]);Serial.print(brightVal[2]);Serial.println(brightVal[3]);
+	// Serial.print("Dim Values: ");Serial.print(dimVal[0]);Serial.print(dimVal[1]);Serial.print(dimVal[2]);Serial.println(dimVal[3]);
+	// delay(1500);
 }

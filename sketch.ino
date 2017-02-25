@@ -5,7 +5,7 @@ int brightPins[] = {ledPins[0], 0, 0, 0};
 int dimPins[] ={0, 0, 0, 0};
 // Hold the current brightness values of the relevant pins
 int brightVal[] = {0, 0, 0, 0};
-int dimVal[] ={9, 9, 9, 9};
+int dimVal[] ={255, 255, 255, 255};
 // Count how many LEDs we have in total
 int ledCount = sizeof(ledPins)/sizeof(int);
 
@@ -30,7 +30,7 @@ void loop() {
 			// Increase the stored brightness value for this pin.
 			brightVal[currentPin] = brightVal[currentPin]+1;
 			// If this pin has reached full brightness ...
-			if (brightVal[currentPin] >= 10) {
+			if (brightVal[currentPin] >= 255) {
 				// ... then reset value to zero ...
 				brightVal[currentPin] = 0;
 				// ... and move that pin to the dimPins array ...
@@ -50,7 +50,7 @@ void loop() {
 			// If this pin has reached full brightness ...
 			if (dimVal[currentPin] <= 0) {
 				// ... then reset value to maximum ...
-				dimVal[currentPin] = 9;
+				dimVal[currentPin] = 255;
 				// ... and move that pin to the brightPins array ...
 				brightPins[currentPin] = dimPins[currentPin];
 				// ... and delete it from the dimPins array ...

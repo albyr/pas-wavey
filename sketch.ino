@@ -25,9 +25,8 @@ void loop() {
 	for (int currentPin = 0; currentPin < ledCount; currentPin++) {
       	// If the current pin is in the brightPins array ...
       	if (brightPins[currentPin] != 0) {
-			// ---
-			// HARDWARE COMMAND = brightVal[currentPin]
-			// ---
+			// Set LED brightness
+			analogWrite(ledPins[currentPin],brightVal[currentPin]);
 			// Increase the stored brightness value for this pin.
 			brightVal[currentPin] = brightVal[currentPin]+1;
 			// If this pin has reached full brightness ...
@@ -44,9 +43,8 @@ void loop() {
       	}
 		// If the current pin is in the dimPins array ...
       	if (dimPins[currentPin] != 0) {
-			// ---
-			// HARDWARE COMMAND = dimVal[currentPin]
-			// ---
+			// Set LED brightness
+			analogWrite(ledPins[currentPin],dimVal[currentPin]);
 			// Increase the stored brightness value for this pin.
 			dimVal[currentPin] = dimVal[currentPin]-1;
 			// If this pin has reached full brightness ...
